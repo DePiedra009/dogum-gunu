@@ -3,63 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sana Bir Mesajım Var!</title>
+    <title>İyi ki Doğdun Sevgilim!</title>
     <style>
         body { 
-            background: #0f0f0f; 
-            color: #fff; 
-            font-family: 'Segoe UI', sans-serif; 
+            background: #0b0b0b; 
+            color: #ffffff; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            height: 100vh; 
+            min-height: 100vh; 
             margin: 0; 
-            overflow: hidden;
+            text-align: center;
         }
-        .container { text-align: center; }
-        .heart { font-size: 80px; margin-bottom: 20px; animation: pulse 1s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        .container {
+            max-width: 400px;
+            padding: 30px;
+            border: 1px solid #333;
+            border-radius: 20px;
+            background: #161616;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+        }
+        /* Fotoğraf Alanı */
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #ff4757;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(255, 71, 87, 0.3);
+        }
+        h1 { color: #ff4757; font-size: 2rem; margin-bottom: 10px; }
+        p { color: #ccc; line-height: 1.6; }
         
         .btn {
             background: #ff4757;
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: 12px 25px;
+            font-size: 1.1rem;
             border-radius: 50px;
             cursor: pointer;
+            margin-top: 15px;
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
-            text-decoration: none;
         }
-        .btn:hover { background: #ff6b81; transform: translateY(-3px); }
+        .btn:hover { background: #ff6b81; transform: scale(1.05); }
+
+        #surprise { display: none; margin-top: 25px; border-top: 1px solid #333; padding-top: 20px; animation: fadeIn 1s; }
+        .heart { font-size: 40px; color: #ff4757; animation: beat 0.8s infinite alternate; }
         
-        #surprise { display: none; margin-top: 30px; font-size: 1.5rem; color: #f1f2f6; animation: fadeIn 1s; }
+        @keyframes beat { to { transform: scale(1.2); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="heart">🎁</div>
-        <h1>Bir Sürprizin Var!</h1>
-        <p>Aşağıdaki butona basmanı bekliyorum...</p>
-        <br>
-        <button class="btn" onclick="showSurprise()">Buraya Tıkla ❤️</button>
-        
-        <div id="surprise">
-            <h2>İYİ Kİ DOĞDUN SEVGİLİM! 🎂</h2>
-            <p>Seninle geçen her saniye benim için çok değerli.<br>
-            Hadi, şimdi yeni yaşına beraber giriyoruz!</p>
-        </div>
-    </div>
-
-    <script>
-        function showSurprise() {
-            document.getElementById('surprise').style.display = 'block';
-            document.querySelector('.btn').style.display = 'none';
-            document.querySelector('.heart').innerText = '💖';
-            // İstersen buraya bir konfeti efekti kodu da eklenebilir ama vakit dar!
-        }
-    </script>
-</body>
-</html>
