@@ -1,3 +1,65 @@
-<body style="background:red; color:white; display:flex; align-items:center; justify-content:center; height:100vh;">
-    <h1>İyi ki Doğdun Sevgilim! ❤️</h1>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Bir Mesajım Var!</title>
+    <style>
+        body { 
+            background: #0f0f0f; 
+            color: #fff; 
+            font-family: 'Segoe UI', sans-serif; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0; 
+            overflow: hidden;
+        }
+        .container { text-align: center; }
+        .heart { font-size: 80px; margin-bottom: 20px; animation: pulse 1s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        
+        .btn {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+            text-decoration: none;
+        }
+        .btn:hover { background: #ff6b81; transform: translateY(-3px); }
+        
+        #surprise { display: none; margin-top: 30px; font-size: 1.5rem; color: #f1f2f6; animation: fadeIn 1s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">🎁</div>
+        <h1>Bir Sürprizin Var!</h1>
+        <p>Aşağıdaki butona basmanı bekliyorum...</p>
+        <br>
+        <button class="btn" onclick="showSurprise()">Buraya Tıkla ❤️</button>
+        
+        <div id="surprise">
+            <h2>İYİ Kİ DOĞDUN SEVGİLİM! 🎂</h2>
+            <p>Seninle geçen her saniye benim için çok değerli.<br>
+            Hadi, şimdi yeni yaşına beraber giriyoruz!</p>
+        </div>
+    </div>
+
+    <script>
+        function showSurprise() {
+            document.getElementById('surprise').style.display = 'block';
+            document.querySelector('.btn').style.display = 'none';
+            document.querySelector('.heart').innerText = '💖';
+            // İstersen buraya bir konfeti efekti kodu da eklenebilir ama vakit dar!
+        }
+    </script>
 </body>
+</html>
